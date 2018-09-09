@@ -6,7 +6,7 @@ which make > /dev/null \
     && echo "ok: CLI already installed!" \
     || xcode-select --install
 
-### Install Ruby if not installed.
+### Install Homebrew if not installed.
 echo "?? :: Homebrew"
 which brew > /dev/null \
     && echo "ok: Brew already installed!" \
