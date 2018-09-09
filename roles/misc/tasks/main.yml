@@ -1,0 +1,10 @@
+- name: Install miscellaneous
+  ignore_errors: yes
+  homebrew_cask: name={{ item }} state=present
+  with_items:
+    - dropbox
+    - etcher
+    - skype
+    - slack
+    - spotify
+    - vlc

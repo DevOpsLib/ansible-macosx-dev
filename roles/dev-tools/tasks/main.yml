@@ -1,0 +1,19 @@
+- name: Install programming languages
+  package: name={{ item }}
+  with_items:
+    - golang
+    - node
+    - nodenv
+    - python
+    - python3
+    - pyenv
+    - ruby
+    - rbenv
+
+- name: Install other programming tools
+  ignore_errors: yes
+  homebrew_cask: name={{ item }} state=present
+  with_items:
+    - java
+    - postman
+    - visual-studio-code

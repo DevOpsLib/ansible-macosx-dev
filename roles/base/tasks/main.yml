@@ -1,0 +1,21 @@
+- name: Install base OS packages
+  package: name={{ item }}
+  with_items:
+    - autoconf
+    - automake
+    - coreutils
+    - findutils
+    - gawk
+    - gnu-indent
+    - gnu-sed
+    - gnu-tar
+    - gnutls
+    - vim
+
+- name: Install base cask packages
+  ignore_errors: yes
+  homebrew_cask: name={{ item }} state=present
+  with_items:
+    - firefox
+    - google-chrome
+    - iTerm2

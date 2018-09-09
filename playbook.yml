@@ -1,0 +1,9 @@
+---
+
+- hosts: all
+  roles:
+    - base
+    - cli-tools
+    - dev-tools
+    - misc
+    - ops-tools

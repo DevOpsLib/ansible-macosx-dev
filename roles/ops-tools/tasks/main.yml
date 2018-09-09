@@ -1,0 +1,17 @@
+- name: Install Ops tools
+  package: name={{ item }}
+  with_items:
+    - awscli
+    - docker-compose
+    - docker-machine
+    - heroku
+    - kubernetes-cli
+    - terraform
+
+- name: Install other cask tools
+  ignore_errors: yes
+  homebrew_cask: name={{ item }} state=present
+  with_items:
+    - vagrant
+    - virtualbox
+    - docker

@@ -1,0 +1,38 @@
+- name: Install CLI tools
+  package: name={{ item }}
+  with_items:
+    - bash-completion
+    - curl
+    - geoip
+    - git 
+    - htop
+    - jq
+    - links
+    - eqnxio/ngrok/ngrok
+    - nmap
+    - tree
+    - unrar
+    - watch
+    - wget
+
+- name: bash_facilities
+  git:
+    repo=https://github.com/pedrocesar-ti/bash-facilities.git
+    dest=/tmp/bash-facilities/
+    version=master
+    update=yes
+  become: false
+- name: Install bash-facilities
+  shell: /tmp/bash-facilities/setup.sh
+  become: false
+
+- name: Vimfiles
+  git:
+    repo=https://github.com/pedrocesar-ti/Vimfiles.git
+    dest=/tmp/Vimfiles/
+    version=master
+    update=yes
+  become: false
+- name: Install Vimfiles
+  shell: /tmp/Vimfiles/setup.sh
+  become: false
