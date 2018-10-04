@@ -6,7 +6,9 @@
     - docker-machine
     - heroku
     - kubernetes-cli
+    - kubernetes-helm
     - terraform
+
 
 - name: Install other cask tools
   ignore_errors: yes
@@ -15,3 +17,4 @@
     - vagrant
     - virtualbox
     - docker
+    - minikube
